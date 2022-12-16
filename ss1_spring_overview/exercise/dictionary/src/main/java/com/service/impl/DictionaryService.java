@@ -8,7 +8,7 @@ import java.util.Map;
 
 @Service
 public class DictionaryService implements IDictionaryService {
-    static Map<String, String> dictionary = new HashMap<>();
+    public static Map<String, String> dictionary = new HashMap<>();
 
     static {
         dictionary.put("watermelon", "dưa hấu");
@@ -25,6 +25,7 @@ public class DictionaryService implements IDictionaryService {
         for (String x : dictionary.keySet()) {
             if (x.equals(word)) {
                 wordFound = dictionary.get(x);
+                return wordFound;
             }
         }
 

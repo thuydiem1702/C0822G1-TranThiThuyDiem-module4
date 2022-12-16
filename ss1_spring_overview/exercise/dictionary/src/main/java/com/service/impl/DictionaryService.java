@@ -8,7 +8,7 @@ import java.util.Map;
 
 @Service
 public class DictionaryService implements IDictionaryService {
-    public static Map<String, String> dictionary = new HashMap<>();
+    private static Map<String, String> dictionary = new HashMap<>();
 
     static {
         dictionary.put("watermelon", "dưa hấu");

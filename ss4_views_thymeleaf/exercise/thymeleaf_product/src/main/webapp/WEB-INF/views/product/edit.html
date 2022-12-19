@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/product/layout :: head">
+<body>
+
+<h1>Edit Product</h1>
+<form th:object="${productUpdate}" method="post" action="/product/editProduct">
+    <p hidden>ID: <input type="text" th:field="*{id}" th:label="${productUpdate.getId()}"></p>
+    <p>Name: <input type="text" th:field="*{name}" th:label="${productUpdate.getName()}"></p>
+    <p>Price: <input type="number" th:field="*{price}" th:label="${productUpdate.getPrice()}"></p>
+    <p>Description: <input type="text" th:field="*{description}" th:label="${productUpdate.getDescription()}"></p>
+    <p>Manufacturer: <input type="text" th:field="*{manufacturer}" th:label="${productUpdate.getManufacturer()}"></p>
+    <button type="submit">Update</button>
+</form>
+
+
+<footer th:replace="/product/layout :: footer"></footer>
+</body>
+</html>

@@ -9,9 +9,9 @@ import java.util.List;
 
 @Service
 public class EmailService implements IEmailService {
-    static List<String> languageList = new ArrayList<>();
-    static List<Integer> pageSizeList = new ArrayList<>();
-    static List<EmailSetting> emailSettingList = new ArrayList<>();
+    private static List<String> languageList = new ArrayList<>();
+    private static List<Integer> pageSizeList = new ArrayList<>();
+    private static List<EmailSetting> emailSettingList = new ArrayList<>();
 
     static {
         languageList.add("English");

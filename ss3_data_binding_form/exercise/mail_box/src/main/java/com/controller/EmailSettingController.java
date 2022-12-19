@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 public class EmailSettingController {
 
     @Autowired
-    EmailService emailService;
+    private EmailService emailService;
 
 
     @GetMapping("")
@@ -33,20 +33,18 @@ public class EmailSettingController {
     @PostMapping("/saveSetting")
     public String saveSetting(@ModelAttribute("emailSetting") EmailSetting emailSetting,
                               RedirectAttributes redirectAttributes, HttpServletRequest request) {
-
         String function = request.getParameter("function");
 
         if (function.equals("add")) {
             emailService.AddNewEmailSetting(emailSetting);
-            redirectAttributes.addFlashAttribute("mess","Adding Successfully!");
+            redirectAttributes.addFlashAttribute("mess", "Adding Successfully!");
         } else if (function.equals("update")) {
             emailService.updateEmailSetting(emailSetting);
-            redirectAttributes.addFlashAttribute("mess","Update Successfully!");
+            redirectAttributes.addFlashAttribute("mess", "Update Successfully!");
         } else {
             emailService.deleteEmailSetting(emailSetting);
-            redirectAttributes.addFlashAttribute("mess","Delete Successfully!");
+            redirectAttributes.addFlashAttribute("mess", "Delete Successfully!");
         }
-
 
 
         return "redirect:/email/";

@@ -139,9 +139,11 @@
     </tr>
     </tbody>
 </table>
-<footer th:replace="/layout :: footer"></footer>
 
-<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+<!--<footer th:replace="/layout :: footer"></footer>-->
+
+<div class="modal fade" id="deleteModal" role="dialog" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <form action="/product/deleteProduct" method="post">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -161,6 +163,7 @@
         </div>
     </form>
 </div>
+
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"

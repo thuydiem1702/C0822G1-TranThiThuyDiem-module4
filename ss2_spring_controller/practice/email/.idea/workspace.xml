@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1c6e6d4b-349b-4661-b021-f80e08eee4d2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../ss1_spring_overview/exercise/dictionary/src/main/java/com/service/impl/DictionaryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss1_spring_overview/exercise/dictionary/src/main/java/com/service/impl/DictionaryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss1_spring_overview/exercise/money_change/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss1_spring_overview/exercise/money_change/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss1_spring_overview/practice/spring-greeting/src/main/java/com/codegym/controller/GreetingController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss1_spring_overview/practice/spring-greeting/src/main/webapp/WEB-INF/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss1_spring_overview/practice/spring-greeting/src/main/webapp/WEB-INF/dispatcher-servlet.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss1_spring_overview/practice/spring-greeting/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="2Iw1PNK8UW8FyNHf99E6QyGg2bV" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1c6e6d4b-349b-4661-b021-f80e08eee4d2" name="Default Changelist" comment="" />
+      <created>1671077806031</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1671077806031</updated>
+      <workItem from="1671077809633" duration="789000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1671078590754">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1671078590754" />
+    <state x="91" y="2" key="new project wizard" timestamp="1671078599980">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="91" y="2" key="new project wizard/0.0.1280.680@0.0.1280.680" timestamp="1671078599980" />
+  </component>
+</project>

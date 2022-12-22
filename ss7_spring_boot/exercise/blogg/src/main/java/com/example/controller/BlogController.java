@@ -54,7 +54,8 @@ public class BlogController {
     }
 
     @GetMapping("/delete/{id}")
-    public String delete(@RequestParam int id, Model model) {
+    public String delete(
+            @PathVariable int id, Model model) {
         model.addAttribute("blog", iBlogService.findById(id));
         return "blog/delete";
     }
@@ -67,7 +68,7 @@ public class BlogController {
     }
 
     @GetMapping("/view/{id}")
-    public String view(@RequestParam int id, Model model) {
+    public String view(@PathVariable int id, Model model) {
         model.addAttribute("blog", iBlogService.findById(id));
         return "blog/view";
     }

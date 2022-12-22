@@ -1,7 +1,6 @@
 package com.example.model;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 
 @Entity
 public class Blog {

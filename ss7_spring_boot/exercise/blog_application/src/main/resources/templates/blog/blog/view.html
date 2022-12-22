@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Page</title>
+</head>
+<body>
+<h1>View Page</h1>
+<button><a href="/blog/list" style="text-decoration: none">Back</a></button>
+<hr>
+<p th:text="Category + ': ' + ${blogView.getCategory().getName()}"></p>
+<textarea th:text="${blogView.getContent()}" rows="9" cols="70">
+  Đây là một ví dụ sử dụng thẻ textarea với thuộc tính rows và cols
+</textarea>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+
+<body>
+
+<h1>Welcome to blog Management!</h1>
+<p>
+    <input type="text" id="searchAuthor" placeholder="Search by author...">
+    <button id="searchAction">Search</button>
+</p>
+<hr>
+<table border="1" id="tableBlog">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Author</th>
+        <th>Date Published</th>
+        <th>Category</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+<button id="nextButton">Next</button>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // init();
+        let pageNumber = 0;
+
+        function init() {
+            $.ajax({
+                url: 'http://localhost:8080/api/blog',
+                type: "GET",
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data);
+                    let tr = [];
+                    for (let i = 0; i < data.length; i++) {
+                        tr.push("<tr>");
+                        tr.push("<td>" + data[i].name + "</td>");
+                        tr.push("<td>" + data[i].author + "</td>");
+                        tr.push("<td>" + data[i].datePublished + "</td>");
+                        tr.push("<td>" + data[i].categoryId + "</td>");
+                        tr.push("</tr>");
+                    }
+                    $("tbody").append(tr.join(""));
+                }
+            })
+        }
+
+        $("#searchAction").click(function () {
+            let searchAuthor = $("#searchAuthor").val();
+            $("tbody").empty();
+            $.ajax({
+                url: `http://localhost:8080/api/blog/searchByAuthor/${searchAuthor}`,
+                type: "GET",
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data);
+                    let tr = [];
+                    for (let i = 0; i < data.length; i++) {
+                        tr.push("<tr>");
+                        tr.push("<td>" + data[i].name + "</td>");
+                        tr.push("<td>" + data[i].author + "</td>");
+                        tr.push("<td>" + data[i].datePublished + "</td>");
+                        tr.push("<td>" + data[i].categoryId + "</td>");
+                        tr.push("</tr>");
+                    }
+                    $("tbody").append(tr.join(""));
+                }
+            })
+        })
+
+        $("#nextButton").click(function () {
+            $("tbody").empty();
+            $.ajax({
+                url: "http://localhost:8080/api/blog/page" + "?page=" + pageNumber,
+                type: "GET",
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data);
+                    let tr = [];
+                    for (let i = 0; i < data.length; i++) {
+                        tr.push("<tr>");
+                        tr.push("<td>" + data[i].name + "</td>");
+                        tr.push("<td>" + data[i].author + "</td>");
+                        tr.push("<td>" + data[i].datePublished + "</td>");
+                        tr.push("<td>" + data[i].categoryId + "</td>");
+                        tr.push("</tr>");
+                    }
+                    $("tbody").append(tr.join(""));
+                    pageNumber++
+                }
+            })
+        })
+
+    })
+</script>
+</html>

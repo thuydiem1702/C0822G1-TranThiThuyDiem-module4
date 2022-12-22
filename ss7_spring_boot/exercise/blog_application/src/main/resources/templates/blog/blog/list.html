@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List Page</title>
+</head>
+<body>
+<h1>Welcome to blog of mine!</h1>
+<div>
+    <button><a href="/blog/list" style="text-decoration: none">Blog manager</a></button>
+    <button><a href="/category/list" style="text-decoration: none">Category manager</a></button>
+</div>
+<hr>
+<div>
+    <button><a href="/blog/create" style="text-decoration: none">Add new blog</a></button>
+    <button><a href="/blog/sortByDate" style="text-decoration: none">Sort</a></button>
+    <div style="float: right">
+        <form action="/blog/searchBlogByName" method="get">
+            <label>
+                <input type="text" placeholder="Search blog by name..." name="searchName">
+            </label>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</div>
+<p th:text="${mess}"></p>
+<table border="1">
+    <tr>
+        <th>N.o</th>
+        <th>Name</th>
+        <th>Author</th>
+        <th>Date Published</th>
+        <th>Category</th>
+        <th>View</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <tr th:each="x,y : ${blogList}">
+        <td th:text="${y.count}"></td>
+        <td th:text="${x.getName()}"></td>
+        <td th:text="${x.getAuthor()}"></td>
+        <td th:text="${x.getDateFormatted()}"></td>
+        <td th:text="${x.category.getName()}"></td>
+        <td><button><a th:href="@{/blog/view-blog/__${x.getId()}__}">View</a></button></td>
+        <td><button><a th:href="@{/blog/edit-blog/__${x.getId()}__}">Edit</a></button></td>
+        <td><button><a th:href="@{/blog/delete-blog/__${x.getId()}__}">Delete</a></button></td>
+    </tr>
+</table>
+<div>
+    <a th:if="${blogList.hasPrevious()}" th:href="@{'/blog/list'(page = ${blogList.number - 1})}">Previous</a>
+    <span th:text="${blogList.number + 1}"></span>/<span th:text="${blogList.totalPages}"></span>
+    <a th:if="${blogList.hasNext()}" th:href="@{'/blog/list'(page = ${blogList.number + 1})}">Next</a>
+</div>
+</body>
+</html>

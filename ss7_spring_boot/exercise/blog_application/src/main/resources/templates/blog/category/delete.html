@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Category</title>
+</head>
+<body>
+<h1>Delete Category</h1>
+<hr>
+<h2>Are you sure?</h2>
+
+<form th:action="@{/category/delete-category}" th:object="${categoryDelete}" method="post">
+    <input hidden name="id" th:field="*{id}">
+    <input type="submit" value="delete">
+    <button><a href="/category/list" style="text-decoration: none; color: black">Back</a></button>
+</form>
+</body>
+</html>

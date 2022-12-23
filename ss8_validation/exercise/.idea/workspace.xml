@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4183b055-d242-40c3-94ca-eada87b788d6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../practice/custom_validation/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/custom_validation/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/custom_validation/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/custom_validation/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/custom_validation/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/custom_validation/src/main/java/com/ss8/CustomValidationApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/custom_validation/src/main/java/com/ss8/config/ApplicationConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/custom_validation/src/main/java/com/ss8/controller/PhoneController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/custom_validation/src/main/java/com/ss8/model/PhoneNumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/custom_validation/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/custom_validation/src/main/resources/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/custom_validation/src/main/resources/templates/result.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/custom_validation/src/main/resources/validation-message.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/validating_form_input/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/validating_form_input/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/validating_form_input/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/validating_form_input/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/validating_form_input/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/validating_form_input/src/main/java/com/ss8/PracticeApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/validating_form_input/src/main/java/com/ss8/config/ApplicationConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/validating_form_input/src/main/java/com/ss8/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/validating_form_input/src/main/java/com/ss8/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/validating_form_input/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/validating_form_input/src/main/resources/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/validating_form_input/src/main/resources/templates/result.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/validating_form_input/src/main/resources/validation-message.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module 1/ss4_Git&amp;Html/bai_tap/Su_dung_Git/GitProject" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module 1/ss4_Git&amp;Html/bai_tap/Su_dung_Git/GitProject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss7_Spring_boot/exercise/blog_application/src/main/java/com/ss7/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss7_Spring_boot/exercise/blog_application/src/main/java/com/ss7/model/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss7_Spring_boot/exercise/blog_application/src/main/java/demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss7_Spring_boot/exercise/blog_application/src/main/java/demo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss7_Spring_boot/exercise/blog_application/src/main/resources/templates/blog/category/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss7_Spring_boot/exercise/blog_application/src/main/resources/templates/blog/category/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss7_Spring_boot/exercise/blog_application/src/main/resources/templates/blog/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss7_Spring_boot/exercise/blog_application/src/main/resources/templates/blog/view.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="2GZPYGjExuUFamYJHJlLBa4T2ha" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/validate_register_form" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Xuan Vinh\Desktop\code\CodeGym\module 4\ss8_validation\exercise\src\main\resources\templates" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Xuan Vinh\Desktop\code\CodeGym\module 4\ss8_validation\exercise\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="ValidateRegisterFormApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="validate_register_form.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ss8.ValidateRegisterFormApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4183b055-d242-40c3-94ca-eada87b788d6" name="Default Changelist" comment="" />
+      <created>1666593178310</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1666593178310</updated>
+      <workItem from="1666593186482" duration="4189000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1666597800909">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1666597800909" />
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1666594096811">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1666594096811" />
+    <state x="549" y="153" key="FileChooserDialogImpl" timestamp="1666597810036">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="153" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1666597810036" />
+    <state width="1493" height="261" key="GridCell.Tab.0.bottom" timestamp="1666597811941">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1666597811941" />
+    <state width="1493" height="261" key="GridCell.Tab.0.center" timestamp="1666597811941">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1666597811941" />
+    <state width="1493" height="261" key="GridCell.Tab.0.left" timestamp="1666597811941">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1666597811941" />
+    <state width="1493" height="261" key="GridCell.Tab.0.right" timestamp="1666597811941">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1666597811941" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1666597811942">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1666597811942" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1666597811942">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1666597811942" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1666597811941">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1666597811941" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1666597811942">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1666597811942" />
+    <state width="1493" height="261" key="GridCell.Tab.2.bottom" timestamp="1666597811942">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1666597811942" />
+    <state width="1493" height="261" key="GridCell.Tab.2.center" timestamp="1666597811942">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1666597811942" />
+    <state width="1493" height="261" key="GridCell.Tab.2.left" timestamp="1666597811942">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1666597811942" />
+    <state width="1493" height="261" key="GridCell.Tab.2.right" timestamp="1666597811942">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1666597811942" />
+    <state x="209" y="73" key="new project wizard" timestamp="1666597722820">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="209" y="73" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1666597722820" />
+  </component>
+</project>

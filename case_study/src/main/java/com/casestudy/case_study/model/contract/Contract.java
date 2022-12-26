@@ -3,8 +3,6 @@ package com.casestudy.case_study.model.contract;
 import com.casestudy.case_study.model.customer.Customer;
 import com.casestudy.case_study.model.employee.Employee;
 import com.casestudy.case_study.model.facility.Facility;
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.Set;

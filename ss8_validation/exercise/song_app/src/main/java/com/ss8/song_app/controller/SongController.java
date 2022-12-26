@@ -21,7 +21,7 @@ import java.util.Optional;
 public class SongController {
 
     @Autowired
-    ISongService songService;
+    private ISongService songService;
 
     @GetMapping("/list")
     public String showListSong(Model model) {

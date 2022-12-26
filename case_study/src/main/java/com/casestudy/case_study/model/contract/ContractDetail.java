@@ -1,7 +1,5 @@
 package com.casestudy.case_study.model.contract;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import javax.persistence.*;
 
 @Entity

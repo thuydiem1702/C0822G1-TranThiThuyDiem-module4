@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Form</title>
+</head>
+<body>
+<h1>Edit Form</h1>
+<hr>
+<form th:object="${editedCustomerDto}" th:action="@{/customer/edit}" method="post">
+    <p hidden>Id: <input type="text" th:field="*{id}"></p>
+    <p>Name: <input type="text" th:field="*{name}"></p>
+    <p>Birthday: <input type="date" th:field="*{dateOfBirth}"></p>
+    <p>Gender:
+        <select th:field="*{gender}">
+            <option th:value="-1">--</option>
+            <option th:value="1">Male</option>
+            <option th:value="0">Female</option>
+        </select>
+    </p>
+    <p>Identify Card: <input type="text" th:field="*{idCard}"></p>
+    <p>Phone Number: <input type="text" th:field="*{phoneNumber}"></p>
+    <p>Email: <input type="text" th:field="*{email}"></p>
+    <p>Address: <input type="text" th:field="*{address}"></p>
+    <p>Customer Type:
+        <select th:field="*{customerType}">
+            <option th:value="-1">--</option>
+            <option th:each="x : ${customerTypeList}" th:text="${x.getName()}" th:value="${x.getId()}"></option>
+        </select>
+    </p>
+    <button type="submit">Edit</button>
+    <button><a th:href="@{/customer/list}">Back</a></button>
+</form>
+</body>
+</html>

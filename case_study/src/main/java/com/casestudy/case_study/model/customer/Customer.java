@@ -18,7 +18,7 @@ public class Customer {
     private String phoneNumber;
     private String email;
     private String address;
-    private Integer status = 1;
+    private Integer status;
 
     @ManyToOne
     @JoinColumn(name = "customerType_id", referencedColumnName = "id")

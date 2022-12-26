@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Form</title>
+</head>
+
+<style>
+    body {
+        margin: 10px;
+        background-color: whitesmoke;
+    }
+
+    table {
+        background-color: white;
+    }
+
+    a {
+        text-decoration: none;
+    }
+</style>
+
+<body>
+<h1>Create Form</h1>
+<hr>
+<form th:object="${newCustomer}" th:action="@{/customer/create}" method="post">
+
+    <p>
+        Name: <input type="text" th:field="*{name}">
+        <span style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+    </p>
+
+    <p>
+        Birthday: <input type="date" id="datePicker123" th:field="*{dateOfBirth}">
+        <span style="color: red" th:if="${#fields.hasErrors('dateOfBirth')}" th:errors="*{dateOfBirth}"></span>
+    </p>
+
+    <p>Gender:
+        <select th:field="*{gender}">
+            <option th:value="-1">--</option>
+            <option th:value="1">Male</option>
+            <option th:value="0">Female</option>
+        </select>
+        <span style="color: red" th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}"></span>
+    </p>
+
+    <p>
+        Identify Card: <input type="text" th:field="*{idCard}">
+        <span style="color: red" th:if="${#fields.hasErrors('idCard')}" th:errors="*{idCard}"></span>
+    </p>
+
+    <p>
+        Phone Number: <input type="text" th:field="*{phoneNumber}">
+        <span style="color: red" th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"></span>
+    </p>
+
+    <p>
+        Email: <input type="text" th:field="*{email}">
+        <span style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+    </p>
+
+    <p>
+        Address: <input type="text" th:field="*{address}">
+        <span style="color: red" th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></span>
+    </p>
+
+    <p>Customer Type:
+        <select th:field="*{customerType}">
+            <option th:value="-1">--</option>
+            <option th:each="x : ${customerTypeList}" th:text="${x.getName()}" th:value="${x.getId()}"></option>
+        </select>
+        <span style="color: red" th:if="${#fields.hasErrors('customerType')}" th:errors="*{customerType}"></span>
+    </p>
+
+    <button type="submit">Create</button>
+    <button><a th:href="@{/customer/list}">Back</a></button>
+</form>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+
+</script>
+
+</html>

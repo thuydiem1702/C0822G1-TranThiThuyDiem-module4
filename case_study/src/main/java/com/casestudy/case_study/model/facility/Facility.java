@@ -1,8 +1,6 @@
 package com.casestudy.case_study.model.facility;
 
 import com.casestudy.case_study.model.contract.Contract;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.util.Set;

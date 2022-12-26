@@ -1,7 +1,6 @@
 package com.casestudy.case_study.model.employee;
 
 import javax.persistence.*;
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.Set;
 
 @Entity

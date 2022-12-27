@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List Page</title>
+</head>
+<body>
+<h1>Book management</h1>
+<button><a style="text-decoration: none; color: black" href="/title/return">Return book</a></button>
+<hr>
+<p style="color: red" th:text="${mess}"></p>
+</form>
+</p>
+<table border="1">
+    <tr>
+        <th>N.o</th>
+        <th>Name</th>
+        <th>Author</th>
+        <th>Category</th>
+        <th>Borrow</th>
+    </tr>
+    <tr th:each="x,y : ${titleList}">
+        <td th:text="${y.count}"></td>
+        <td th:text="${x.getName()}"></td>
+        <td th:text="${x.getAuthor()}"></td>
+        <td th:text="${x.getCategory()}"></td>
+        <td>
+            <button><a th:href="@{/title/borrow/__${x.getId()}__}">Borrow</a></button>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

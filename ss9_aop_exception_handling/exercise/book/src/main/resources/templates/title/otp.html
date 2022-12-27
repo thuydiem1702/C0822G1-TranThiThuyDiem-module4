@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Otp</title>
+</head>
+<body>
+<p th:text="${mess}"></p>
+
+<form action="/title/borrow" method="post">
+    <input hidden type="text" name="idOrderBook" th:value="${idOrderBook}">
+    <p>Input your otp code here: <input type="text" name="otpCode">
+        <button type="submit">Borrow</button>
+    </p>
+</form>
+
+</body>
+</html>

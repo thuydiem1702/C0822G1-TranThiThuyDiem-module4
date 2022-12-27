@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Returning Book Page</title>
+</head>
+<body>
+<p th:text="${mess}"></p>
+<form action="/title/returnBook" method="post">
+    <p>Input your otp code here to retuning the book you've borrowed: </p>
+
+    <input type="text" name="otpCode">
+    <button type="submit">Return</button>
+
+</form>
+</body>
+</html>

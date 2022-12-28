@@ -1,13 +1,13 @@
-package com.casestudy.case_study;
+package com.ss10;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CaseStudyApplication {
+public class ShoppingCartApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(CaseStudyApplication.class, args);
+        SpringApplication.run(ShoppingCartApplication.class, args);
     }
 
 }

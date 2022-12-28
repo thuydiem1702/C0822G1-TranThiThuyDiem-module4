@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <table class="table" th:if="${cart!=null && cart.getProductMap().size()> 0}">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Img</th>
+                <th>Price</th>
+                <th>Quantity</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="productMap: ${cart.productMap}">
+                <td th:text="${productMap.key.name}"></td>
+                <td>
+                    <img th:src="${productMap.key.img}" style="width: 290px;height: 195px">
+                </td>
+                <td th:text="${productMap.key.price}"></td>
+                <td th:text="${productMap.value}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="alert alert-warning" role="alert" th:if="${cart==null || cart.getProductMap()==0}">
+        Cart Empty
+    </div>
+</div>
+</body>
+</html>

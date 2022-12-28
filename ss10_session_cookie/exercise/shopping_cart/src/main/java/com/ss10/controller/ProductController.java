@@ -22,7 +22,7 @@ public class ProductController {
     }
 
     @Autowired
-    ProductService productService;
+    private ProductService productService;
 
     @GetMapping("")
     public ModelAndView showHome() {

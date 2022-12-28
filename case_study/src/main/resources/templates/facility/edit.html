@@ -1,10 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Edit Form</title>
+
+    <style>
+        body {
+            margin: 10px;
+            background-color: whitesmoke;
+        }
+
+        table {
+            background-color: white;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+
 </head>
 <body>
-$END$
+<h1>Edit Form</h1>
+<hr>
+
+<div th:if="${editedFacilityDto.getFacilityType() == '1'}">
+    <form th:object="${editedFacilityDto}" th:action="@{/facility/edit}" method="post">
+        <p hidden>Id: <input type="text" th:field="*{id}"></p>
+        <p hidden>Status: <input type="text" th:field="*{status}"></p>
+        <p>Name: <input type="text" th:field="*{name}"></p>
+        <p>Area: <input type="text" th:field="*{area}"></p>
+        <p>Cost: <input type="text" th:field="*{cost}"></p>
+        <p>Max People: <input type="text" th:field="*{maxPeople}"></p>
+        <p>Standard Room: <input type="text" th:field="*{standardRoom}"></p>
+        <p>Description Other Convenience: <input type="text" th:field="*{descriptionOtherConvenience}"></p>
+        <p>Pool Area: <input type="text" th:field="*{poolArea}"></p>
+        <p>Number Of Floors: <input type="text" th:field="*{numberOfFloors}"></p>
+
+        <p>Facility Type:
+            <select th:field="*{facilityType}">
+                <option th:value="1">Villa</option>
+            </select>
+        </p>
+
+        <p>Rent Type:
+            <select th:field="*{rentType}">
+                <option th:value="-1">--</option>
+                <option th:each="x : ${rentTypeList}" th:text="${x.getName()}" th:value="${x.getId()}"></option>
+            </select>
+        </p>
+
+        <button type="submit">Edit</button>
+        <button><a th:href="@{/facility/list}">Back</a></button>
+    </form>
+</div>
+
+<div th:if="${editedFacilityDto.getFacilityType() == '2'}">
+    <form th:object="${editedFacilityDto}" th:action="@{/facility/edit}" method="post">
+        <p hidden>Id: <input type="text" th:field="*{id}"></p>
+        <p hidden>Status: <input type="text" th:field="*{status}"></p>
+        <p>Name: <input type="text" th:field="*{name}"></p>
+        <p>Area: <input type="text" th:field="*{area}"></p>
+        <p>Cost: <input type="text" th:field="*{cost}"></p>
+        <p>Max People: <input type="text" th:field="*{maxPeople}"></p>
+        <p>Standard Room: <input type="text" th:field="*{standardRoom}"></p>
+        <p>Description Other Convenience: <input type="text" th:field="*{descriptionOtherConvenience}"></p>
+        <p>Number Of Floors: <input type="text" th:field="*{numberOfFloors}"></p>
+
+        <p>Facility Type:
+            <select th:field="*{facilityType}">
+                <option th:value="2">House</option>
+            </select>
+        </p>
+
+        <p>Rent Type:
+            <select th:field="*{rentType}">
+                <option th:value="-1">--</option>
+                <option th:each="x : ${rentTypeList}" th:text="${x.getName()}" th:value="${x.getId()}"></option>
+            </select>
+        </p>
+
+        <button type="submit">Edit</button>
+        <button><a th:href="@{/facility/list}">Back</a></button>
+    </form>
+</div>
+
+<div th:if="${editedFacilityDto.getFacilityType() == '3'}">
+    <form th:object="${editedFacilityDto}" th:action="@{/facility/edit}" method="post">
+        <p hidden>Id: <input type="text" th:field="*{id}"></p>
+        <p hidden>Status: <input type="text" th:field="*{status}"></p>
+        <p>Name: <input type="text" th:field="*{name}"></p>
+        <p>Area: <input type="text" th:field="*{area}"></p>
+        <p>Cost: <input type="text" th:field="*{cost}"></p>
+        <p>Max People: <input type="text" th:field="*{maxPeople}"></p>
+        <p>Facility Free: <input type="text" th:field="*{facilityFree}"></p>
+
+        <p>Facility Type:
+            <select th:field="*{facilityType}">
+                <option th:value="3">Room</option>
+            </select>
+        </p>
+
+        <p>Rent Type:
+            <select th:field="*{rentType}">
+                <option th:value="-1">--</option>
+                <option th:each="x : ${rentTypeList}" th:text="${x.getName()}" th:value="${x.getId()}"></option>
+            </select>
+        </p>
+
+        <button type="submit">Edit</button>
+        <button><a th:href="@{/facility/list}">Back</a></button>
+    </form>
+</div>
+
 </body>
 </html>

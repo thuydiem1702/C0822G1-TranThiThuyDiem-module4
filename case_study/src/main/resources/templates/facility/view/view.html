@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Facility</title>
+</head>
+<body>
+
+<style>
+    body {
+        margin: 10px;
+        background-color: whitesmoke;
+    }
+
+    table {
+        background-color: white;
+    }
+
+    a {
+        text-decoration: none;
+    }
+</style>
+
+<h1>View Facility Details</h1>
+<div>
+    <button style="color: dodgerblue"><a th:href="@{/}">Home</a></button>
+    <button style="color: dodgerblue"><a th:href="@{/facility/list}">Facility Management</a></button>
+</div>
+<hr>
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <td th:text="${viewedFacility.getName()}"></td>
+    </tr>
+    <tr>
+        <th>Area</th>
+        <td th:text="${viewedFacility.getArea()}"></td>
+    </tr>
+    <tr>
+        <th>Cost</th>
+        <td th:text="${viewedFacility.getCost()}"></td>
+    </tr>
+    <tr>
+        <th>Max People</th>
+        <td th:text="${viewedFacility.getMaxPeople()}"></td>
+    </tr>
+    <tr>
+        <th>Facility Type</th>
+        <td th:text="${viewedFacility.getFacilityType()}"></td>
+    </tr>
+    <tr>
+        <th>Rent Type</th>
+        <td th:text="${viewedFacility.getRentType()}"></td>
+    </tr>
+
+
+    <div th:if="${viewedFacility.getFacilityType() == ('Villa')}">
+        <tr>
+            <th>Standard Room</th>
+            <td th:text="${viewedFacility.getStandardRoom()}"></td>
+        </tr>
+        <tr>
+            <th>Description Other Convenience</th>
+            <td th:text="${viewedFacility.getDescriptionOtherConvenience()}"></td>
+        </tr>
+        <tr>
+            <th>Pool Area</th>
+            <td th:text="${viewedFacility.getPoolArea()}"></td>
+        </tr>
+        <tr>
+            <th>Number Of Floors</th>
+            <td th:text="${viewedFacility.getNumberOfFloors()}"></td>
+        </tr>
+    </div>
+
+    <div th:if="${viewedFacility.getFacilityType() == ('House')}">
+        <tr>
+            <th>Standard Room</th>
+            <td th:text="${viewedFacility.getStandardRoom()}"></td>
+        </tr>
+        <tr>
+            <th>Description Other Convenience</th>
+            <td th:text="${viewedFacility.getDescriptionOtherConvenience()}"></td>
+        </tr>
+        <tr>
+            <th>Number Of Floors</th>
+            <td th:text="${viewedFacility.getNumberOfFloors()}"></td>
+        </tr>
+    </div>
+
+    <div th:if="${viewedFacility.getFacilityType() == ('Room')}">
+        <tr>
+            <th>Facility Free</th>
+            <td th:text="${viewedFacility.getFacilityFree()}"></td>
+        </tr>
+    </div>
+</table>
+
+<button style="margin-top: 10px"><a th:href="@{/facility/list}">Back</a></button>
+
+
+</body>
+</html>

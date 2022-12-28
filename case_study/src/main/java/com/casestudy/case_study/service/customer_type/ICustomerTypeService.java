@@ -1,13 +1,9 @@
 package com.casestudy.case_study.service.customer_type;
 
-import com.casestudy.case_study.model.customer.Customer;
 import com.casestudy.case_study.model.customer.CustomerType;
+import com.casestudy.case_study.service.IGeneralService;
 
 import java.util.List;
-import java.util.Optional;
 
-public interface ICustomerTypeService {
-    List<Customer> findAll();
-
-    Optional<CustomerType> findById(Integer valueOf);
+public interface ICustomerTypeService extends IGeneralService<CustomerType> {
 }

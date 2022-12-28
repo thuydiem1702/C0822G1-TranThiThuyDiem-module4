@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service
-public class CustomerTypeServiceImpl implements ICustomerTypeService{
+public class CustomerTypeServiceImpl implements ICustomerTypeService {
 
     @Autowired
     private ICustomerTypeRepository customerTypeRepository;

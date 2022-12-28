@@ -169,7 +169,5 @@ public class CustomerDto implements Validator {
         if (customerType.equals("-1")) {
             errors.rejectValue("customerType", "customerType.matches", "error!");
         }
-
-
     }
 }

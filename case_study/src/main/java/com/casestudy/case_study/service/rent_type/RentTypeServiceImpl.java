@@ -3,9 +3,12 @@ package com.casestudy.case_study.service.rent_type;
 import com.casestudy.case_study.model.facility.RentType;
 import com.casestudy.case_study.repository.IRentTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 
 import java.util.Optional;
 
+@Service
 public class RentTypeServiceImpl implements IRentTypeService{
     @Autowired
     private IRentTypeRepository rentTypeRepository;

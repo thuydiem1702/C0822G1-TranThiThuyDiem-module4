@@ -9,7 +9,7 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-public interface    ICustomerRepository extends JpaRepository<Customer, Integer> {
+public interface ICustomerRepository extends JpaRepository<Customer, Integer> {
 
     @Query(
             value = "select * from customer where status = 1",

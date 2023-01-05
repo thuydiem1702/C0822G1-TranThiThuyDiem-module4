@@ -1,17 +1,21 @@
 package com.casestudy.case_study.model.facility;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
 public class RentType {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
-    private Integer status = 1;
+    private Integer status;
 
     @OneToMany(mappedBy = "rentType")
+    @JsonBackReference
     private Set<Facility> facilities;
 
     public RentType() {

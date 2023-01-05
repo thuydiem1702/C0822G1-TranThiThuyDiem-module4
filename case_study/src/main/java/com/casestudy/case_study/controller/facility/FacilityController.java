@@ -29,13 +29,18 @@ import java.util.Optional;
 public class FacilityController {
 
     @Autowired
-    private IFacilityService facilityService;
-
-    @Autowired
     private IFacilityTypeService facilityTypeService;
 
     @Autowired
+    private IFacilityService facilityService;
+
+    @Autowired
     private IRentTypeService rentTypeService;
+
+    @ModelAttribute("renTypeList")
+    public List<RentType> renTypeList() {
+        return (List<RentType>) rentTypeService.findAll();
+    }
 
     @GetMapping("/list")
     public String showFacilityList(
@@ -45,20 +50,25 @@ public class FacilityController {
             @RequestParam(required = false) String searchFacilityType,
             @PageableDefault(value = 3) Pageable pageable
     ) {
+
         if (searchName == null) {
             searchName = "";
         }
+
         if (searchRentType == null) {
             searchRentType = "";
         }
+
         if (searchFacilityType == null) {
             searchFacilityType = "";
         }
+
         Page<Facility> facilityList = facilityService.findAll(searchName, searchRentType,
-                searchFacilityType,pageable);
+                searchFacilityType, pageable);
         List<FacilityType> facilityTypeList = (List<FacilityType>) facilityTypeService.findAll();
         List<RentType> rentTypeList = (List<RentType>) rentTypeService.findAll();
         List<FacilityDto> facilityDtoList = new ArrayList<>();
+
         for (Facility x : facilityList) {
             FacilityDto facilityDto = new FacilityDto();
             BeanUtils.copyProperties(x, facilityDto);
@@ -214,5 +224,5 @@ public class FacilityController {
 
         return "redirect:/facility/list";
     }
-
 }
+

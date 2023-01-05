@@ -171,8 +171,28 @@
             </form>
         </div>
     </div>
-
 </div>
+<script>
+    let modal = document.getElementById("myModal");
+
+    let span = document.getElementsByClassName("close")[0];
+
+    function openModalDelete(id, name) {
+        document.getElementById("idDelete").value = id;
+        document.getElementById("nameDelete").innerText = name;
+        modal.style.display = "block";
+    }
+
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
 
 </body>
 

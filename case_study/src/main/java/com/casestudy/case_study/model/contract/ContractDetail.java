@@ -1,9 +1,12 @@
 package com.casestudy.case_study.model.contract;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 
 @Entity
 public class ContractDetail {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -12,10 +15,12 @@ public class ContractDetail {
 
     @ManyToOne
     @JoinColumn(name = "contract_id", referencedColumnName = "id")
+    @JsonManagedReference
     private Contract contract;
 
     @ManyToOne
     @JoinColumn(name = "attachFacility_id", referencedColumnName = "id")
+    @JsonManagedReference
     private AttachFacility attachFacility;
 
     public ContractDetail() {
@@ -68,4 +73,5 @@ public class ContractDetail {
     public void setAttachFacility(AttachFacility attachFacility) {
         this.attachFacility = attachFacility;
     }
+
 }

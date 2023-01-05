@@ -34,5 +34,4 @@ public interface IContractRepository extends JpaRepository<Contract, Integer> {
     Page<Contract> findAllCurrent(@Param("customerSearchName") String customerSearchName,
                                   @Param("facilitySearchName") String facilitySearchName,
                                   Pageable pageable);
-
 }

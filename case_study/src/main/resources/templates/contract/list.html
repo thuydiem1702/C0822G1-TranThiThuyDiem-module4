@@ -1,10 +1,650 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Contract List</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial;
+      padding: 10px;
+      background: linear-gradient(110.79248633202553deg,
+      rgba(233, 255, 247, 1) 5.533854166666667%, rgba(170, 216, 227, 1) 96.67968749999999%);
+    }
+
+    /* Header/Blog Title */
+    .header {
+      background-image: url("/image/contract-background.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 20vh;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-style: italic;
+      color: white;
+      font-family: "Times New Roman";
+      font-size: 50px;
+    }
+
+    /* Style the top navigation bar */
+    .topnav {
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    /* Style the topnav links */
+    .topnav a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    /* Change color on hover */
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    /* Create two unequal columns that floats next to each other */
+    /* Left column */
+    .leftcolumn {
+      float: left;
+      width: 75%;
+    }
+
+    /* Right column */
+    .rightcolumn {
+      float: left;
+      width: 25%;
+      background-color: #f1f1f1;
+      padding-left: 20px;
+    }
+
+    /* Fake image */
+    .fakeimg {
+      background-color: #aaa;
+      width: 100%;
+      padding: 20px;
+    }
+
+    /* Add a card effect for articles */
+    .card {
+      background-color: white;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 20px;
+      text-align: center;
+      background: #ddd;
+      margin-top: 20px;
+    }
+
+    /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 800px) {
+      .leftcolumn, .rightcolumn {
+        width: 100%;
+        padding: 0;
+      }
+    }
+
+    /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+    @media screen and (max-width: 400px) {
+      .topnav a {
+        float: none;
+        width: 100%;
+      }
+    }
+  </style>
+
 </head>
 <body>
-$END$
+
+<div class="header">
+  <h1>Furama Resort</h1>
+</div>
+
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+            aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarScroll">
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+        <li class="nav-item">
+          <a style="margin-top: 2px;"
+             class="nav-link active openCreateContract"
+             data-bs-toggle="modal" data-bs-target="#createModal"
+             aria-current="page" href="#">Create</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search" action="/contract/list">
+
+        <select style="width: 50%; margin-right: 8px;"
+                class="form-select" name="displayType" th:value="${displayType}">
+          <option th:value="0">--</option>
+          <option th:value="0">All Contract</option>
+          <option th:value="1">Current Contract</option>
+        </select>
+
+        <input class="form-control me-2"
+               type="text"
+               placeholder="customer name..."
+               name="customerNameSearch"
+               th:value="${customerNameSearch}"
+               aria-label="Search">
+        <input class="form-control me-2"
+               type="text"
+               placeholder="facility name..."
+               name="facilityNameSearch"
+               th:value="${facilityNameSearch}"
+               aria-label="Search">
+        <button class="btn btn-light btn-sm" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+<div class="row">
+  <div class="leftcolumn">
+    <table class="table table-success table-striped" style="margin-top: 12px">
+      <tr>
+        <th>N.o</th>
+        <th>Facility</th>
+        <th>Customer</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Deposit</th>
+        <th>Total Money</th>
+        <th>Attach Facilites</th>
+      </tr>
+      <tr th:each="x,y : ${contractList}">
+        <td th:text="${y.count}"></td>
+        <td th:text="${x.getFacilityName()}"></td>
+        <td th:text="${x.getCustomerName()}"></td>
+        <td th:text="${x.getStartDate()}"></td>
+        <td th:text="${x.getEndDate()}"></td>
+        <td th:text="${x.getDeposit()}"></td>
+        <td th:text="${x.getTotalMoney()}"></td>
+        <td>
+          <button
+                  th:data-contractId="${x.getId()}"
+                  th:onclick="|getContractId(this.getAttribute('data-contractId'))|"
+                  data-bs-toggle="modal" data-bs-target="#addAttachFacilityModalOutSide"
+                  class="btn btn-primary btn-sm outAdding">
+            +
+          </button>
+          <button
+                  th:id="attachFacility + ${x.getId()}"
+                  th:value="${x.getId()}"
+                  style="width: 80%" class="btn btn-primary btn-sm attachFacility"
+                  data-bs-toggle="modal" data-bs-target="#attachFacilityModal">
+            List attach facility
+          </button>
+        </td>
+      </tr>
+    </table>
+
+    <p th:text="${messSuccess}"></p>
+
+    <div style="margin-top: 10px">
+      <a th:if="${contractList.hasPrevious()}"
+         th:href="@{'/contract/list'(page = ${contractList.number - 1},
+            customerNameSearch = ${customerNameSearch}, facilityNameSearch = ${facilityNameSearch},
+            displayType = ${displayType})}">Previous</a>
+
+      <span th:text="${contractList.number + 1}"></span>/<span th:text="${contractList.totalPages}"></span>
+
+      <a th:if="${contractList.hasNext()}"
+         th:href="@{'/contract/list'(page = ${contractList.number + 1},
+            customerNameSearch = ${customerNameSearch}, facilityNameSearch = ${facilityNameSearch},
+            displayType = ${displayType})}">Next</a>
+    </div>
+  </div>
+
+</div>
+
+
+<div class="modal fade" id="createModal" tabindex="-1"
+     aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5">Create Contract</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form th:action="@{/contract/create}" th:object="${newContractDto}" method="post">
+        <div class="modal-body">
+
+          <div class="input-group mb-3">
+            <span class="input-group-text">Start Date</span>
+            <input th:field="*{startDate}"
+                   type="date" class="form-control" placeholder="dd/mm/yyyy" aria-label="startDate"
+                   aria-describedby="basic-addon1">
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text">End Date</span>
+            <input th:field="*{endDate}"
+                   type="date" class="form-control" placeholder="dd/mm/yyyy" aria-label="endDate"
+                   aria-describedby="basic-addon1">
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text">Deposit</span>
+            <input th:field="*{deposit}"
+                   type="text" class="form-control" aria-label="deposit"
+                   aria-describedby="basic-addon1">
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text">Customer</span>
+            <select class="form-select" th:field="*{customerName}">
+              <option th:value="-1">--</option>
+              <option th:each="x : ${customerList}" th:text="${x.getName()}"
+                      th:value="${x.getId()}"></option>
+            </select>
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text">Employee</span>
+            <select class="form-select" th:field="*{employeeName}">
+              <option th:value="-1">--</option>
+              <option th:each="x : ${employeeList}" th:text="${x.getName()}"
+                      th:value="${x.getId()}"></option>
+            </select>
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text">Facility</span>
+            <select class="form-select facility" th:field="*{facilityName}">
+              <option th:value="-1">--</option>
+              <option th:each="x : ${facilityList}" th:text="${x.getName()}"
+                      th:value="${x.getId()}"></option>
+            </select>
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text">Total Money</span>
+            <input th:field="*{totalMoney}"
+                   disabled
+                   style="background-color: dimgrey; color: white" type="number"
+                   class="form-control totalMoneyCreate"
+                   id="totalMoneyCreate"
+                   aria-label="totalMoney"
+                   aria-describedby="basic-addon1">
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text">Attach Facility</span>
+            <button type="button" data-bs-toggle="modal" data-bs-target="#addAttachFacilityModal"
+                    class="btn btn-primary">+
+            </button>
+            <p class="attachFacilityMess" style="margin-left: 10px"></p>
+          </div>
+
+          <div hidden class="input-group mb-3">
+            <span class="input-group-text">Contract Detail List</span>
+            <input th:field="*{contractDetailsString}"
+                   type="text" id="contractDetailString">
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary closeCreateContract"
+                    data-bs-dismiss="modal">Close
+            </button>
+            <button type="submit" class="btn btn-primary">Create</button>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="attachFacilityModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5">Attach Facility</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <table style="width: 100%" class="table table-warning">
+        <thead>
+        <tr>
+          <th>N.o</th>
+          <th>Name</th>
+          <th>Unit</th>
+          <th>Quanity</th>
+        </tr>
+        </thead>
+        <tbody class="attachFacilityTr">
+
+        </tbody>
+      </table>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="addAttachFacilityModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5">Add Attach Facility</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+
+        <table class="table">
+          <thead>
+          <tr>
+            <th>N.o</th>
+            <th>Attach Facility Name</th>
+            <th>Quantity</th>
+          </tr>
+          </thead>
+
+          <tbody id="attachFacilityListAdd">
+
+          </tbody>
+        </table>
+
+        <div class="input-group mb-3">
+          <span class="input-group-text">Total</span>
+          <input placeholder="Total attach facility money..."
+                 disabled
+                 style="background-color: whitesmoke; color: black;" type="text"
+                 class="form-control totalMoneyAttachFacility"
+                 id="totalMoneyAttachFacility"
+                 aria-label="totalMoney"
+                 aria-describedby="basic-addon1">
+        </div>
+
+        <div class="input-group mb-3">
+          <span class="input-group-text">Attach Facility</span>
+          <select class="form-select AddAttachFacilityId">
+            <option th:value="-1">--</option>
+            <option th:each="x : ${attachFacilityList}" th:text="${x.getName()}"
+                    th:value="${x.getId()}"></option>
+          </select>
+        </div>
+
+        <div class="input-group mb-3">
+          <span class="input-group-text">Quantity</span>
+          <input class="form-control AddAttachFacilityQuantity"
+                 type="number"
+                 aria-label="Quantity"
+                 aria-describedby="basic-addon1">
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary closeAddingAF" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary addAttachFacility">Add</button>
+        </div>
+
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="addAttachFacilityModalOutSide" tabindex="-1" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5">Add Attach Facility</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+
+        <form th:action="@{/contract-detail/create}" method="post" th:object="${newContractDetailDto}">
+
+          <input hidden th:field="*{contractId}" id="addContractDetailContractId" type="text">
+
+          <div class="input-group mb-3">
+            <span class="input-group-text">Attach Facility</span>
+            <select class="form-select" th:field="*{attachFacilityName}">
+              <option th:value="-1">--</option>
+              <option th:each="x : ${attachFacilityList}" th:text="${x.getName()}"
+                      th:value="${x.getId()}"></option>
+            </select>
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text">Quantity</span>
+            <input th:field="*{quantity}"
+                   class="form-control"
+                   type="number"
+                   aria-label="Quantity"
+                   aria-describedby="basic-addon1">
+          </div>
+
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Add</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+          </div>
+
+        </form>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+    let tempContractDetailList = [];
+
+    init();
+
+    $("#addAttachFacilityModal").on('hidden.bs.modal', () => $("#createModal").modal('show'))
+
+    $(".btn.btn-primary.btn-sm.attachFacility").click(function () {
+
+      let contractId = $(this).val();
+      $(".attachFacilityTr").empty();
+      $.ajax({
+        url: 'http://localhost:8080/api/contract/v1/attachFacilityList/' + contractId,
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+          console.log(data);
+
+          if (data.length === 0) {
+            $(".attachFacilityTr").append("<p style='margin: " +
+                    "10px 10px; width: 100%'>Customer doesn't use any attach facility yet!</p>");
+          } else {
+            let tr = [];
+            for (let i = 0; i < data.length; i++) {
+              tr.push("<tr>");
+              tr.push("<td>" + (i + 1) + "</td>");
+              tr.push("<td>" + data[i].attachFacilityName + "</td>");
+              tr.push("<td>" + data[i].attachFacilityUnit + "</td>");
+              tr.push("<td>" + data[i].quantity + "</td>");
+              tr.push("</tr>");
+            }
+            $(".attachFacilityTr").append(tr.join(""));
+          }
+
+        }
+      })
+    })
+
+    $(".btn.btn-primary.addAttachFacility").click(function () {
+
+      let tr1 = [];
+      let tr2 = [];
+
+      let attachFacilityId = $(".form-select.AddAttachFacilityId").val();
+      let attachFacilityQuantity = $(".form-control.AddAttachFacilityQuantity").val();
+      let attachFacilityName = "";
+      let attachFacilityMoney = 0;
+
+      $.ajax({
+        async: false,
+        url: 'http://localhost:8080/api/contract/v1/getAttachFacility/' + attachFacilityId,
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+          attachFacilityName = data.name;
+          attachFacilityMoney = data.cost * attachFacilityQuantity;
+        }
+      })
+
+      tempContractDetailList.push([attachFacilityName, attachFacilityQuantity,
+        attachFacilityId, attachFacilityMoney]);
+
+      for (let i = 0; i < tempContractDetailList.length; i++) {
+        tr1.push("<tr>")
+        tr1.push("<td>" + (i + 1) + "</td>");
+        tr1.push("<td>" + tempContractDetailList[i][0] + "</td>");
+        tr1.push("<td>" + tempContractDetailList[i][1] + "</td>");
+        tr1.push("</tr>")
+      }
+
+      for (let i = 0; i < tempContractDetailList.length; i++) {
+        tr2.push(tempContractDetailList[i][1]);
+        tr2.push(tempContractDetailList[i][2]);
+      }
+
+      attachFacilityMoney = 0;
+
+      for (let i = 0; i < tempContractDetailList.length; i++) {
+        attachFacilityMoney += tempContractDetailList[i][3];
+      }
+
+      $("#attachFacilityListAdd").empty();
+      $("#attachFacilityListAdd").append(tr1.join(""));
+
+      document.getElementById("contractDetailString").value = tr2.join("");
+      document.getElementById("totalMoneyAttachFacility").value = attachFacilityMoney;
+    })
+
+    $(".btn.btn-secondary.closeAddingAF").click(function () {
+
+      let totalMoneyAttachFacility = parseFloat($("#totalMoneyAttachFacility").val());
+      let currentMoneyFacility = parseFloat($("#totalMoneyCreate").val());
+
+      document.getElementById("totalMoneyCreate").value = (currentMoneyFacility + totalMoneyAttachFacility);
+
+      init();
+
+    })
+
+    $(".btn.btn-secondary.closeCreateContract").click(function () {
+
+      clear()
+
+      document.getElementById("totalMoneyAttachFacility").value = "Total attach facility money...";
+    })
+
+    $(".nav-link.active.openCreateContract").click(function () {
+
+      clear()
+
+      init();
+
+    })
+
+    $(".form-select.facility").change(function () {
+
+      let facilityId = $(".form-select.facility").val();
+      let facilityCost = "";
+
+      $.ajax({
+        async: false,
+        url: 'http://localhost:8080/api/contract/v1/getFacility/' + facilityId,
+        type: 'get',
+        dataType: 'json',
+        success: function (facility) {
+
+          facilityCost = facility.cost;
+
+        }
+      })
+
+      document.getElementById("totalMoneyCreate").value = facilityCost;
+
+
+    })
+
+    $(".btn.btn-primary.btn-sm.outAdding").click(function () {
+
+
+    })
+
+    function init() {
+
+      if (tempContractDetailList.length === 0) {
+        $(".attachFacilityMess").empty();
+        $(".attachFacilityMess").append("There is no attach facility added yet!")
+      } else {
+        $(".attachFacilityMess").empty();
+        $(".attachFacilityMess").append("There is " + tempContractDetailList.length + " attach facility added!")
+      }
+
+    }
+
+    function clear() {
+
+      for (let i = 0; i < tempContractDetailList.length; i++) {
+        tempContractDetailList.pop();
+      }
+
+      $("#attachFacilityListAdd").empty();
+    }
+
+  })
+
+  function getContractId(contractId) {
+    document.getElementById("addContractDetailContractId").value = contractId
+  }
+</script>
+
 </html>

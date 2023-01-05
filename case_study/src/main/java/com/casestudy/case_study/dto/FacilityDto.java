@@ -1,11 +1,13 @@
 package com.casestudy.case_study.dto;
 
+
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 import javax.validation.constraints.NotEmpty;
 
 public class FacilityDto implements Validator {
+
     private Integer id;
 
     @NotEmpty(message = "Name is required!")

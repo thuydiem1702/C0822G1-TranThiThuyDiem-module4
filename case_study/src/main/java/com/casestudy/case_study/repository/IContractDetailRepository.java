@@ -8,6 +8,7 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface IContractDetailRepository extends JpaRepository<ContractDetail, Integer> {
+
     @Query(
             value = "select * from contract_detail where status = 1",
             nativeQuery = true

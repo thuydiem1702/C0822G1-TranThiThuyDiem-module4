@@ -5,6 +5,7 @@ import java.util.Set;
 
 @Entity
 public class Division {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

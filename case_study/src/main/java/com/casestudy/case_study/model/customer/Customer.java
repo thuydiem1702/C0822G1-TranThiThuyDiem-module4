@@ -1,13 +1,15 @@
 package com.casestudy.case_study.model.customer;
 
-
 import com.casestudy.case_study.model.contract.Contract;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
 public class Customer {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -21,7 +23,7 @@ public class Customer {
     @Column(unique = true)
     private String email;
     private String address;
-    private Integer status;
+    private Integer status = 1;
 
     @ManyToOne
     @JoinColumn(name = "customerType_id", referencedColumnName = "id")

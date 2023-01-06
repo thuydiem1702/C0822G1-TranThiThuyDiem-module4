@@ -20,6 +20,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @Controller
@@ -33,29 +34,17 @@ public class CustomerController {
     private ICustomerTypeService customerTypeService;
 
     @ModelAttribute("customerTypeList")
-    public List<CustomerType> customerTypeList () {
+    public List<CustomerType> customerTypeList() {
         return (List<CustomerType>) customerTypeService.findAll();
     }
 
     @GetMapping("/list")
     public String searchCustomer(
-            @RequestParam(required = false) String searchName,
-            @RequestParam(required = false) String searchAddress,
-            @RequestParam(required = false) String searchCustomerType,
+            @RequestParam(required = false, defaultValue = "") String searchName,
+            @RequestParam(required = false, defaultValue = "") String searchAddress,
+            @RequestParam(required = false, defaultValue = "") String searchCustomerType,
             @PageableDefault(value = 5) Pageable pageable,
             Model model) {
-
-        if (searchAddress == null) {
-            searchAddress = "";
-        }
-
-        if (searchName == null) {
-            searchName = "";
-        }
-
-        if (searchCustomerType == null) {
-            searchCustomerType = "";
-        }
 
         Page<Customer> customersFound = customerService.search(searchName, searchAddress,
                 searchCustomerType, pageable);
@@ -100,10 +89,22 @@ public class CustomerController {
                                  BindingResult bindingResult,
                                  RedirectAttributes redirectAttributes) {
 
+        Map<String, String> messError = customerService.messError(newCustomer);
+
         new CustomerDto().validate(newCustomer, bindingResult);
 
         if (bindingResult.hasErrors()) {
             return "/customer/create";
+        }
+        if (messError.isEmpty()) {
+            Customer customer = new Customer();
+            BeanUtils.copyProperties(newCustomer, customer);
+            customerService.save(customer);
+            redirectAttributes.addFlashAttribute("message", "Thêm mới khách hàng thành công!");
+        } else {
+            for (Map.Entry<String, String> error : messError.entrySet()) {
+                bindingResult.rejectValue(error.getKey(), error.getValue());
+            }
         }
 
         Customer customerATBC = new Customer();

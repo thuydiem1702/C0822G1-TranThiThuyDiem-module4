@@ -81,7 +81,7 @@ public class ContractController {
 
         Page<Contract> contractList;
 
-        if(displayType == null) {
+        if (displayType == null) {
             displayType = String.valueOf(0);
         }
 
@@ -147,12 +147,12 @@ public class ContractController {
         if (!newContractDto.getContractDetailsString().equals("")) {
             String[] contractDetails = newContractDto.getContractDetailsString().split("");
 
-            for (int i = 0; i < contractDetails.length ; i = i + 2) {
+            for (int i = 0; i < contractDetails.length; i = i + 2) {
                 ContractDetail contractDetailATBC = new ContractDetail();
                 contractDetailATBC.setQuantity(Integer.valueOf(contractDetails[i]));
 
                 Optional<AttachFacility> attachFacilityATBC = attachFacilityService.findById(
-                        Integer.valueOf(contractDetails[i+1]));
+                        Integer.valueOf(contractDetails[i + 1]));
 
                 contractDetailATBC.setAttachFacility(attachFacilityATBC.get());
 

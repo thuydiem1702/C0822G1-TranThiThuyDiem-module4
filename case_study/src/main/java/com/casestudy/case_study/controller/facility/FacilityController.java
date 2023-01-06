@@ -45,23 +45,11 @@ public class FacilityController {
     @GetMapping("/list")
     public String showFacilityList(
             Model model,
-            @RequestParam(required = false) String searchName,
-            @RequestParam(required = false) String searchRentType,
-            @RequestParam(required = false) String searchFacilityType,
+            @RequestParam(required = false, defaultValue = "") String searchName,
+            @RequestParam(required = false, defaultValue = "") String searchRentType,
+            @RequestParam(required = false, defaultValue = "") String searchFacilityType,
             @PageableDefault(value = 3) Pageable pageable
     ) {
-
-        if (searchName == null) {
-            searchName = "";
-        }
-
-        if (searchRentType == null) {
-            searchRentType = "";
-        }
-
-        if (searchFacilityType == null) {
-            searchFacilityType = "";
-        }
 
         Page<Facility> facilityList = facilityService.findAll(searchName, searchRentType,
                 searchFacilityType, pageable);

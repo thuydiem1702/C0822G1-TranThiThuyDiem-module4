@@ -13,11 +13,12 @@
 
 </head>
 <body>
-<h1>Home Page</h1>
-<button><a th:href="@{customer/list}">Customer Management</a></button>
-<button><a th:href="@{facility/list}">Facility Management</a></button>
-<button><a th:href="@{contract/list}">Contract Management</a></button>
-
+<marquee th:bgcolor="AntiqueWhite">Home Page</marquee>
+<div style="text-align:center">
+    <button><a th:href="@{customer/list}">Customer Management</a></button>
+    <button><a th:href="@{facility/list}">Facility Management</a></button>
+    <button><a th:href="@{contract/list}">Contract Management</a></button>
+</div>
 <!--<button style="float: right">-->
 <!--    <a style="text-decoration: none; color: red" th:href="@{/logout}">Log out</a>-->
 <!--</button>-->

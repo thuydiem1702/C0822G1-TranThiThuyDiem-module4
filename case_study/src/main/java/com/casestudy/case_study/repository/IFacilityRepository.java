@@ -20,7 +20,7 @@ public interface IFacilityRepository extends JpaRepository<Facility, Integer> {
     @Query(
             value = "select * from facility where name like %:searchName% " +
                     "and rent_type_id like %:searchRentType% " +
-                    "and facility_type_id like %:searchFacilityType% " +
+                    "and (:searchFacilityType = '' or facility_type_id = :searchFacilityType) " +
                     "and status = 1",
             nativeQuery = true
 

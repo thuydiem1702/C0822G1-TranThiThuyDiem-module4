@@ -20,37 +20,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4183b055-d242-40c3-94ca-eada87b788d6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../practice/custom_validation/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice/custom_validation/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice/custom_validation/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice/custom_validation/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice/custom_validation/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice/custom_validation/src/main/java/com/ss8/CustomValidationApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice/custom_validation/src/main/java/com/ss8/config/ApplicationConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice/custom_validation/src/main/java/com/ss8/controller/PhoneController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice/custom_validation/src/main/java/com/ss8/model/PhoneNumber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice/custom_validation/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice/custom_validation/src/main/resources/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice/custom_validation/src/main/resources/templates/result.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice/custom_validation/src/main/resources/validation-message.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice/validating_form_input/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice/validating_form_input/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice/validating_form_input/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice/validating_form_input/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice/validating_form_input/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice/validating_form_input/src/main/java/com/ss8/PracticeApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice/validating_form_input/src/main/java/com/ss8/config/ApplicationConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice/validating_form_input/src/main/java/com/ss8/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice/validating_form_input/src/main/java/com/ss8/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice/validating_form_input/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice/validating_form_input/src/main/resources/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice/validating_form_input/src/main/resources/templates/result.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../practice/validating_form_input/src/main/resources/validation-message.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../module 1/ss4_Git&amp;Html/bai_tap/Su_dung_Git/GitProject" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module 1/ss4_Git&amp;Html/bai_tap/Su_dung_Git/GitProject" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss7_Spring_boot/exercise/blog_application/src/main/java/com/ss7/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss7_Spring_boot/exercise/blog_application/src/main/java/com/ss7/model/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss7_Spring_boot/exercise/blog_application/src/main/java/demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss7_Spring_boot/exercise/blog_application/src/main/java/demo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss7_Spring_boot/exercise/blog_application/src/main/resources/templates/blog/category/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss7_Spring_boot/exercise/blog_application/src/main/resources/templates/blog/category/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss7_Spring_boot/exercise/blog_application/src/main/resources/templates/blog/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss7_Spring_boot/exercise/blog_application/src/main/resources/templates/blog/view.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_ web_service/exercise/blog/src/main/java/com/blog/controller/BlogController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_ web_service/exercise/blog/src/main/java/com/blog/controller/CategoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_ web_service/exercise/blog/src/main/java/com/blog/model/Blog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_ web_service/exercise/blog/src/main/java/com/blog/model/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_ web_service/exercise/blog/src/main/java/com/blog/repository/IBlogRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_ web_service/exercise/blog/src/main/java/com/blog/repository/ICategoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_ web_service/exercise/blog/src/main/java/com/blog/service/IGeneralService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_ web_service/exercise/blog/src/main/java/com/blog/service/blog/IBlogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_ web_service/exercise/blog/src/main/java/com/blog/service/blog/impl/BlogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_ web_service/exercise/blog/src/main/java/com/blog/service/category/ICategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_ web_service/exercise/blog/src/main/java/com/blog/service/category/impl/CategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_ web_service/exercise/blog/src/main/resources/templates/blog/delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_ web_service/exercise/blog/src/main/resources/templates/blog/error.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_ web_service/exercise/blog/src/main/resources/templates/blog/formCreate.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_ web_service/exercise/blog/src/main/resources/templates/blog/formEdit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_ web_service/exercise/blog/src/main/resources/templates/blog/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_ web_service/exercise/blog/src/main/resources/templates/blog/view.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_ web_service/exercise/blog/src/main/resources/templates/category/delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_ web_service/exercise/blog/src/main/resources/templates/category/formCreate.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_ web_service/exercise/blog/src/main/resources/templates/category/formEdit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_ web_service/exercise/blog/src/main/resources/templates/category/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss11_ web_service/exercise/blog/src/main/resources/templates/vvvv.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study/src/main/resources/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss1_spring_overview/practice/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss1_spring_overview/practice/customer-management" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +65,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="ProjectId" id="2GZPYGjExuUFamYJHJlLBa4T2ha" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -90,7 +83,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/validate_register_form" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -115,6 +108,7 @@
       </method>
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -126,11 +120,12 @@
       <option name="presentableId" value="Default" />
       <updated>1666593178310</updated>
       <workItem from="1666593186482" duration="4189000" />
+      <workItem from="1672288208612" duration="12000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -142,6 +137,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1666597800909">

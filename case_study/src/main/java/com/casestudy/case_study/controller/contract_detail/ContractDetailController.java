@@ -4,7 +4,7 @@ import com.casestudy.case_study.dto.ContractDetailDto;
 import com.casestudy.case_study.model.contract.AttachFacility;
 import com.casestudy.case_study.model.contract.Contract;
 import com.casestudy.case_study.model.contract.ContractDetail;
-import com.casestudy.case_study.service.attach_facility.IAttachFacilityService;
+import com.casestudy.case_study.service.attach_facility_service.IAttachFacilityService;
 import com.casestudy.case_study.service.contract.IContractService;
 import com.casestudy.case_study.service.contract_detail.IContractDetailService;
 import org.springframework.beans.BeanUtils;

@@ -10,6 +10,5 @@ public class CaseStudyApplication {
     public static void main(String[] args) {
         SpringApplication.run(CaseStudyApplication.class, args);
     }
-
 }
 

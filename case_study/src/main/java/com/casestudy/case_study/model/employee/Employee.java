@@ -1,7 +1,7 @@
 package com.casestudy.case_study.model.employee;
 
 import com.casestudy.case_study.model.contract.Contract;
-import org.apache.catalina.User;
+import com.casestudy.case_study.model.security.User;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -31,9 +31,9 @@ public class Employee {
     @JoinColumn(name = "educationDegree_id", referencedColumnName = "id")
     private EducationDegree educationDegree;
 
-//    @OneToOne
-//    @JoinColumn(name = "user_id", referencedColumnName = "id")
-//    private User user;
+    @OneToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private User user;
 
     @OneToMany(mappedBy = "employee")
     private Set<Contract> contracts;
@@ -41,22 +41,6 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(Integer id, String name, String dateOfBirth, String idCard, Double salary, String phoneNumber,
-                    String address, Integer status, Position position, Division division,
-                    EducationDegree educationDegree, User user) {
-        this.id = id;
-        this.name = name;
-        this.dateOfBirth = dateOfBirth;
-        this.idCard = idCard;
-        this.salary = salary;
-        this.phoneNumber = phoneNumber;
-        this.address = address;
-        this.status = status;
-        this.position = position;
-        this.division = division;
-        this.educationDegree = educationDegree;
-//        this.user = user;
-    }
 
     public Integer getId() {
         return id;
@@ -146,13 +130,13 @@ public class Employee {
         this.educationDegree = educationDegree;
     }
 
-//    public User getUser() {
-//        return user;
-//    }
-//
-//    public void setUser(User user) {
-//        this.user = user;
-//    }
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public Set<Contract> getContracts() {
         return contracts;

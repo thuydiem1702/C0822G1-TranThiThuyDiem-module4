@@ -8,7 +8,7 @@ import com.casestudy.case_study.model.contract.ContractDetail;
 import com.casestudy.case_study.model.customer.Customer;
 import com.casestudy.case_study.model.employee.Employee;
 import com.casestudy.case_study.model.facility.Facility;
-import com.casestudy.case_study.service.attach_facility.IAttachFacilityService;
+import com.casestudy.case_study.service.attach_facility_service.IAttachFacilityService;
 import com.casestudy.case_study.service.contract.IContractService;
 import com.casestudy.case_study.service.contract_detail.IContractDetailService;
 import com.casestudy.case_study.service.customer.ICustomerService;
@@ -168,6 +168,4 @@ public class ContractController {
 
         return "redirect:/contract/list";
     }
-
-
 }

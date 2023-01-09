@@ -13,4 +13,9 @@ public class HomeController {
         return "home";
     }
 
+    @GetMapping("/loginPage")
+    public String showLoginPage() {
+        return "/security/myLogin";
+    }
+
 }

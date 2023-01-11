@@ -1,6 +1,7 @@
 package com.casestudy.case_study.model.security;
 
 import com.casestudy.case_study.model.employee.Employee;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -12,6 +13,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String username;
+    @JsonIgnore  //đảm bảo password k bị show ra client(k bị lộ ra khỏi hệ thống)
     private String password;
     private Integer status = 1;
 

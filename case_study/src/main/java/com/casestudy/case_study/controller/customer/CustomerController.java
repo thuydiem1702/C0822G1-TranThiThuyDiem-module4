@@ -43,7 +43,7 @@ public class CustomerController {
             @RequestParam(required = false, defaultValue = "") String searchName,
             @RequestParam(required = false, defaultValue = "") String searchAddress,
             @RequestParam(required = false, defaultValue = "") String searchCustomerType,
-            @PageableDefault(value = 5) Pageable pageable,
+            @PageableDefault(value = 2) Pageable pageable,
             Model model) {
 
         Page<Customer> customersFound = customerService.search(searchName, searchAddress,
